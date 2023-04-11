@@ -1,0 +1,144 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --primary: #fff;
+  --secondary: #000;
+  --accent: #d55;
+  --icon-size: 32px;
+}
+
+.container {
+  
+}
+
+/*
+ * SIDEBAR SECTION
+ */
+
+.sidebar {
+    position: fixed;
+    top: 0px;
+    width: 294px;
+    height: 100%;
+    padding-block: 16px;
+    z-index: 100000;
+    background-color: var(--secondary);
+    color: var(--primary);
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.header {
+    margin-inline: 16px;
+    margin-bottom: 8px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.head-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    flex: 1;
+}
+
+.logo {
+    flex-basis: 1;
+    margin-right: 16px;
+}
+
+.logo > img {
+    height: auto;
+    width: var(--icon-size);
+    max-height: 100%;
+    max-width: 100%;
+    //border-radius: 100%;
+}
+
+.nav {
+    flex: 4;
+    margin-block: 8px;
+    overflow-y: auto;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.nav > ul > li {
+    list-style-type: none;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: var(--icon-size);
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 16px;
+}
+
+.active {
+    background-color: var(--accent);
+}
+
+.footer {
+    margin-top: 8px;
+    margin-inline: 16px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 8px;
+    font-size: 12pt;
+}
+
+.links > * {
+    padding-right: 8px;
+    padding-bottom: 8px;
+    
+}
+
+.copyright {
+    font-size: 8pt;
+    font-weight: 100;
+}
+
+.main {
+    margin-left: 294px;
+    padding: 16px;
+}
+
+.main > * {
+    padding-bottom: 16px;
+    font-size: 16pt;
+}
+
+.page-title {
+    font-size: 32pt;
+    font-weight: 900;
+    margin-bottom: 24px;
+}
