@@ -1,5 +1,5 @@
 * {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
@@ -9,11 +9,8 @@
   --primary: #fff;
   --secondary: #000;
   --accent: #d55;
+  --accent-2: #d559;
   --icon-size: 32px;
-}
-
-.container {
-  
 }
 
 /*
@@ -34,6 +31,10 @@
     flex-flow: column;
     justify-content: space-between;
     align-items: stretch;
+}
+
+.sidebar-mobile {
+    display: none;
 }
 
 .header {
@@ -58,9 +59,16 @@
     flex: 1;
 }
 
+.invert {
+    filter: invert(100%);
+}
+
 .logo {
     flex-basis: 1;
     margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo > img {
@@ -68,7 +76,6 @@
     width: var(--icon-size);
     max-height: 100%;
     max-width: 100%;
-    //border-radius: 100%;
 }
 
 .nav {
@@ -86,6 +93,14 @@
     align-items: center;
 }
 
+.active {
+    background-color: var(--accent);
+}
+
+.nav > ul > li:hover {
+    background-color: var(--accent-2);
+}
+
 .icon {
     height: var(--icon-size);
     max-width: 100%;
@@ -93,13 +108,21 @@
     margin-right: 16px;
 }
 
-.active {
-    background-color: var(--accent);
-}
-
 .footer {
     margin-top: 8px;
     margin-inline: 16px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.mobile-hider {
+    display: none;
+    flex-basis: 1;
+}
+
+.foot-wrap {
     flex: 1;
     display: flex;
     flex-flow: column;
@@ -141,4 +164,49 @@
     font-size: 32pt;
     font-weight: 900;
     margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        opacity: 0;
+        width: 100%;
+    }
+
+    .sidebar.triggered {
+        transition: transform .5s, opacity .5s;
+    }
+
+    .sidebar.toggled {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .sidebar-mobile {
+        position: fixed;
+        top: 0px;
+        width: 64px;
+        height: 100%;
+        padding-block: 16px;
+        z-index: 99999;
+        background-color: var(--secondary);
+        color: var(--primary);
+
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .mobile-hider {
+        display: block;
+    }
+
+    .main {
+        margin-left: 64px;
+    }
+
+    .page-title {
+        font-size: 24pt;
+    }
 }
