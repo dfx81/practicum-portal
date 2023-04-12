@@ -157,7 +157,13 @@ body.no-scroll {
 .links > * {
     padding-right: 8px;
     padding-bottom: 8px;
-    
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.links  *:hover {
+    text-decoration: underline;
+    color: var(--accent);
 }
 
 .copyright {
