@@ -9,7 +9,7 @@
     --primary: #fff;
     --secondary: #000;
     --accent: #d55;
-    --accent-2: #d559;
+    --accent-2: #933;
     --icon-size: 32px;
 
     --header-size: 18pt;
@@ -27,6 +27,14 @@ body {
 
 body.no-scroll {
     overflow-y: hidden;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--accent-2);
 }
 
 /*
@@ -201,16 +209,49 @@ body.no-scroll {
     max-width: 100%;
 }
 
+.main table {
+    width: 100%;
+    border-spacing: 0px;
+    border: 1px solid var(--secondary);
+    overflow: hidden;
+}
+
+.main table td {
+    border: 1px solid var(--secondary);
+    margin: 0px;
+    padding: 8px;
+}
+
+.main tr td:first-child {
+    width: auto;
+}
+
+.main tr td:last-child {
+    width: fit-content;
+    text-align: center;
+}
+
+.main table tr td a {
+    text-align: center;
+}
+
+.main table tr td a img {
+    width: calc(var(--icon-size) * 1.5);
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: none;
+}
+
 .main iframe {
     border-radius: 16px;
     padding: 8px;
-    box-shadow: 0px 4px 16px -12px black;
+    box-shadow: 0px 4px 16px -12px var(--secondary);
 }
 
 .main img {
     border-radius: 16px;
     margin-bottom: 16px;
-    box-shadow: 0px 4px 16px -12px black;
+    box-shadow: 0px 4px 16px -12px var(--secondary);
 }
 
 .page-title {
@@ -302,5 +343,9 @@ body.no-scroll {
 
     .content {
         margin-left: 64px;
+    }
+
+    .main table tr td a img {
+        width: calc(var(--icon-size) * 2);
     }
 }
