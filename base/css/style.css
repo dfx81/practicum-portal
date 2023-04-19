@@ -37,6 +37,11 @@ a:hover {
     color: var(--accent-2);
 }
 
+h2 {
+    font-size: calc(var(--page-title-size) - 8px);
+    margin-bottom: 8px;
+}
+
 /*
  * SIDEBAR SECTION
  */
@@ -199,7 +204,7 @@ a:hover {
     margin-inline: auto;
 }
 
-.main * {
+.main p, .main span {
     margin-bottom: 16px;
     font-size: var(--body-size);
     max-width: 100%;
@@ -207,6 +212,10 @@ a:hover {
 
 .main section > *, .main article > * {
     max-width: 100%;
+}
+
+.main section {
+    margin-bottom: 32px;
 }
 
 .main table {
