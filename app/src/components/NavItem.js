@@ -1,5 +1,8 @@
-export default function NavItem({ isMobile, icon, label, alt = "", isActive = false }) {
+import { NavLink } from "react-router-dom";
+import React from "react";
+
+export default function NavItem({ isMobile, path, icon, label, alt = "" }) {
     return (
-        <li className={isActive ? "active" : undefined}><a href="."><img className="icon invert" alt={alt} src={icon} /> {!isMobile && label}</a></li>
+        <li><NavLink to={path}><img className="icon invert" alt={alt} src={icon} /> {!isMobile && label}</NavLink></li>
     );
 }

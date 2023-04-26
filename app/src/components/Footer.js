@@ -1,14 +1,16 @@
+import React from "react";
+
 export default function Footer({ isMobile }) {
     return (<footer className="footer">
         {
             isMobile ?
-                <a href="#" onClick={toggleMenu}>
-                    <img className="icon mobile-toggler invert" src="assets/menu.svg" />
+                <a href="." onClick={toggleMenu}>
+                    <img alt="Open menu" className="icon mobile-toggler invert" src="assets/menu.svg" />
                 </a>
                 :
                 <>
-                    <a className="logo mobile-hider" href="#" onClick={hideMenu}>
-                        <img className="invert" src="assets/close.svg" />
+                    <a className="logo mobile-hider" href="." onClick={hideMenu}>
+                        <img alt="Close menu" className="invert" src="assets/close.svg" />
                     </a>
                     <div className="foot-wrap">
                         <nav className="links">

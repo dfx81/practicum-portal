@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Header({ isMobile }) {
     return (
         <header className="header">

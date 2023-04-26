@@ -3,6 +3,9 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--secondary);
+    scrollbar-gutter: auto;
 }
 
 :root {
@@ -21,8 +24,28 @@
     --ticker-text-size: 20pt;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    /* Mostly for vertical scrollbars */
+    height: 5px;
+    /* Mostly for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: var(--accent);
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-track {
+    /* Background */
+    background: var(--secondary);
+    opacity: 0;
+}
+
 body {
     background-color: var(--secondary);
+    height: 100%;
 }
 
 body.no-scroll {
@@ -40,6 +63,12 @@ a:hover {
 h2 {
     font-size: calc(var(--page-title-size) - 8px);
     margin-bottom: 8px;
+}
+
+html,
+#root,
+.container {
+    height: 100%;
 }
 
 /*
@@ -115,9 +144,9 @@ h2 {
     font-weight: bold;
 }
 
-.nav > ul > li {
+.nav>ul>li {
     list-style-type: none;
-    padding: 16px;
+    padding: 0px;
     display: flex;
     align-items: center;
 }
@@ -128,13 +157,15 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 16px;
+    flex: 1;
 }
 
 .active {
     background-color: var(--accent);
 }
 
-.nav > ul > li:hover {
+.nav>ul>li>a:hover {
     background-color: var(--accent-2);
 }
 
@@ -196,21 +227,32 @@ h2 {
 .content {
     margin-left: 294px;
     background-color: var(--primary);
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 .main {
     padding: 16px;
+    width: 100%;
     max-width: 80ch;
     margin-inline: auto;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: stretch;
 }
 
-.main p, .main span {
+.main p,
+.main span {
     margin-bottom: 16px;
     font-size: var(--body-size);
     max-width: 100%;
 }
 
-.main section > *, .main article > * {
+.main section>*,
+.main article>* {
     max-width: 100%;
 }
 
@@ -223,6 +265,7 @@ h2 {
     border-spacing: 0px;
     border: 1px solid var(--secondary);
     overflow: hidden;
+    font-size: var(--body-size);
 }
 
 .main table td {
@@ -293,7 +336,7 @@ h2 {
     animation-duration: 60s;
 }
 
-.ticker-items > * {
+.ticker-items>* {
     margin-inline: 8px;
 }
 
@@ -311,7 +354,7 @@ h2 {
 @media (max-width: 768px) {
     :root {
         --body-size: 12pt;
-        --page-title-size: 24pt;
+        --page-title-size: 18pt;
         --ticker-text-size: 16pt;
     }
 
