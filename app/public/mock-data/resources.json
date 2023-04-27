@@ -1,0 +1,16 @@
+{
+    "files": [
+        {
+            "name": "File A",
+            "url": "https://example.com"
+        },
+        {
+            "name": "File B",
+            "url": "https://example.com"
+        },
+        {
+            "name": "File C",
+            "url": "https://example.com"
+        }
+    ]
+}

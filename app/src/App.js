@@ -15,9 +15,7 @@ function App() {
         <main className="main">
           <Outlet />
         </main>
-        <Ticker contents={["REMINDER: Don't forget to upload your report duty form within TWO WEEKS of starting your practicum.",
-          "REMINDER: Don't forget to pay your practicum fees via FIMS.",
-          "Good luck with your internship."]} />
+        <Ticker />
       </div>
     </div>
   );

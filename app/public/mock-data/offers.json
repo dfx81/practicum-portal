@@ -1,0 +1,39 @@
+{
+    "a222": [
+        {
+            "company": "Company A",
+            "description": "A typical company",
+            "location": "Sungai Petani",
+            "state": "Kedah",
+            "img": "https://example.com",
+            "target": [
+                "IT",
+                "Multimedia"
+            ]
+        },
+        {
+            "company": "Company B",
+            "description": "A typical company",
+            "location": "Georgetown",
+            "state": "Pulau Pinang",
+            "img": "https://example.com",
+            "target": [
+                "IT",
+                "Computer Science",
+                "Multimedia"
+            ]
+        },
+        {
+            "company": "Company C",
+            "description": "A typical company",
+            "location": "Bayan Lepas",
+            "state": "Pulau Pinang",
+            "img": "https://example.com",
+            "target": [
+                "IT",
+                "Business",
+                "Marketing"
+            ]
+        }
+    ]
+}
