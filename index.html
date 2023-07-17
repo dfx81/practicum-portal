@@ -19,15 +19,11 @@
     <script>
       let target = document.getElementById("target");
 
-      fetch("https://practicum.loca.lt/data.json", {
-        headers: {
-          "Bypass-Tunnel-Reminder": true
-        }
-      }).then(
+      fetch("https://test.dfxz.one/api/tickers").then(
         res => res.json()
       ).then(
         json => {
-          target.innerText = json.data.message;
+          target.innerText = json.data[0].attributes.Message;
         }
       );
     </script>
