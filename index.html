@@ -3,6 +3,11 @@
   <head>
     <title>Practicum Portal Test</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -23,7 +28,7 @@
         res => res.json()
       ).then(
         json => {
-          target.innerText = json.data[0].attributes.Message;
+          target.innerText = json.data[0].attributes.message;
         }
       );
     </script>
