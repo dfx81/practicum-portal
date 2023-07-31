@@ -28,7 +28,7 @@ window.onload = () => {
         }
     );
 
-    fetch("https://649f-103-5-183-43.ngrok-free.app/contacts", {mode: "cors"}).then(
+    fetch("https://test.dfxz.one/api/contact"}).then(
         (res) => {
             if (!res.ok) {
                 throw new Error(`HTTP error ${res.status}`);
@@ -37,13 +37,13 @@ window.onload = () => {
             return res.json();
         }
     ).then(
-        (data) => {
+        (json) => {
             let mail = document.querySelector("#email");
-            mail.innerText = data.email;
-            mail.href = `mailto:${data.email}`;
+            mail.innerText = json.data.attributes.email;
+            mail.href = `mailto:${json.data.attributes.email}`;
             
-            document.querySelector("#address").innerText = data.addresses.base;
-            document.querySelector("#office").innerText = data.addresses.office;
+            document.querySelector("#address").innerText = json.data.attributes.address;
+            document.querySelector("#office").innerText = json.data.attributes.address.office;
             
             let cas = document.querySelector("#cas");
             cas.innerText = data.phone.cas;
