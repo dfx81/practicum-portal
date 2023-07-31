@@ -28,7 +28,7 @@ window.onload = () => {
         }
     );
 
-    fetch("https://test.dfxz.one/api/contact"}).then(
+    fetch("https://test.dfxz.one/api/contact").then(
         (res) => {
             if (!res.ok) {
                 throw new Error(`HTTP error ${res.status}`);
