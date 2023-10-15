@@ -6,14 +6,14 @@ export default function Header({ isMobile }) {
             {
                 isMobile ?
                     <a href=".">
-                        <img className="icon" alt="Site Logo" src="assets/cuic.png" />
+                        <img className="icon" alt="Site Logo" src="/assets/cuic.png" />
                     </a>
                     :
                     <div className="head-wrap">
                         <a className="logo" href=".">
-                            <img src="assets/cuic.png" alt="Site Logo" />
+                            <img src="/assets/cuic.png" alt="Site Logo" />
                         </a>
-                        <h1 className="title">CUIC PORTAL</h1>
+                        <h1 className="title">UUM-PIP</h1>
                     </div>
             }
         </header>

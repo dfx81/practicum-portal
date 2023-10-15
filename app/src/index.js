@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import Announcement from "./pages/Announcements";
+import Article from './pages/Article';
 import Contacts from "./pages/Contacts";
 import Resources from "./pages/Resources";
 import Information from "./pages/Informations";
@@ -13,6 +14,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Guide from './pages/Guide';
+import Companies from './pages/Companies';
+import Offer from './pages/Offer';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +28,20 @@ const router = createBrowserRouter([
         element: <Announcement />
       },
       {
+        path: "/article/:slug",
+        element: <Article />
+      },
+      {
+        path: "/guide/:slug",
+        element: <Guide />
+      },
+      {
         path: "/companies",
-        element: <Contacts />
+        element: <Companies />
+      },
+      {
+        path: "/offer/:slug",
+        element: <Offer />
       },
       {
         path: "contacts",

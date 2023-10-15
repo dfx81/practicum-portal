@@ -1,25 +1,26 @@
 import React from "react";
+import API_URL from "../api"
 
 export default function Footer({ isMobile }) {
     return (<footer className="footer">
         {
             isMobile ?
                 <a href="." onClick={toggleMenu}>
-                    <img alt="Open menu" className="icon mobile-toggler invert" src="assets/menu.svg" />
+                    <img alt="Open menu" className="icon mobile-toggler invert" src="/assets/menu.svg" />
                 </a>
                 :
                 <>
                     <a className="logo mobile-hider" href="." onClick={hideMenu}>
-                        <img alt="Close menu" className="invert" src="assets/close.svg" />
+                        <img alt="Close menu" className="invert" src="/assets/close.svg" />
                     </a>
                     <div className="foot-wrap">
                         <nav className="links">
                             <a href=".">Privacy</a>
                             <a href=".">Feedback</a>
                             <a href=".">About</a>
-                            <a href=".">Admin</a>
+                            <a href={API_URL + "/admin"}>Admin</a>
                             <a href=".">Terms</a>
-                            <a href=".">UUM Portal</a>
+                            <a href="https://portal.uum.edu.my">UUM Portal</a>
                         </nav>
                         <span className="copyright">&copy;2023-Present, UUM Practicum Unit.</span>
                     </div>

@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import API_URL from "../api";
 
 export default function Ticker() {
     const [messages, setMessages] = useState(
         {
-            headlines: []
+            "data":[]
         }
     );
 
@@ -28,8 +29,12 @@ export default function Ticker() {
         <aside className="ticker">
             <div className="ticker-items">
                 {
-                    messages.headlines.map(
+                    /*messages.headlines.data(
                         (message, index) => <span key={index}>{message}</span>
+                    )*/
+
+                    messages.data.map(
+                        (item) => <span key={item.id}>{item.attributes.message}</span>
                     )
                 }
             </div>
@@ -38,7 +43,7 @@ export default function Ticker() {
 }
 
 function fetchData() {
-    return fetch("./mock-data/motd.json", {mode: "cors"}).then(
-        data => data.json()
+    return fetch(`${API_URL}/api/tickers`, {mode: "cors"}).then(
+        data => (data.ok) ? data.json() : { data: [] }
     );
 }
