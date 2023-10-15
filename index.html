@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practicum Portal Test</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hello!</h1>
+    </header>
+    <main>
+      <p>Welcome to this website. This is just a test for the server hosted in practicum unit, UUM.</p>
+      <p>Message of the Day: <b id="target">...</b></p>
+    </main>
+    <footer>
+      <small>&copy;2023-Present, Practicum Unit, UUM.</small>
+    </footer>
+
+    <script>
+      let target = document.getElementById("target");
+
+      fetch("https://test.dfxz.one/api/tickers").then(
+        res => res.json()
+      ).then(
+        json => {
+          target.innerText = json.data[0].attributes.message;
+        }
+      );
+    </script>
+  </body>
+</html>
